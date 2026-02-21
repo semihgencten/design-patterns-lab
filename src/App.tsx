@@ -3,7 +3,7 @@ import { AppRoutes } from './app/routes'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-dark-surface text-gray-100 flex flex-col">
         <AppRoutes />
       </div>
