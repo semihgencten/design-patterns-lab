@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-surface: #121212;
+  --color-dark-panel: #1e1e1e;
+  --color-primary-purple: #9333ea;
+  --color-primary-blue: #3b82f6;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-surface text-gray-100 antialiased;
+  }
+}
