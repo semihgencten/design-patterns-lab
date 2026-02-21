@@ -1,73 +1,95 @@
-# React + TypeScript + Vite
+# 🎨 Interactive Design Patterns Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An interactive simulation engine for understanding design patterns deeply, not just reading about them.
 
-Currently, two official plugins are available:
+Instead of reading abstract documentation, this platform allows developers to:
+- 👁️ **See object interactions animated**
+- 🕹️ **Manipulate runtime behavior**
+- ⚡ **Trigger pattern flows**
+- 🔄 **Observe state changes in real-time**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Targeted toward mid-level and advanced developers looking for intuitive, hands-on understanding of architectural concepts.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Interactive Visualizations**: Each pattern features a code + runtime dual view.
+- **Teaching Animations**: Lifecycle, flow direction, object creation, and state propagation are all represented visually.
+- **Visual Metaphors**: Abstract patterns made tangible (e.g., Singleton as a "Locked Control Room", Observer as a "Broadcast Tower").
+- **Progressive Learning**: Move from concept overview → visual explanation → interactive sandbox → challenge mode.
+- **Extensible Engine**: An architecture built specifically to sandbox and register any structural, creational, or behavioral pattern seamlessly.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Technology Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Routing**: [React Router v7](https://reactrouter.com/)
+- **Animations**: [Framer Motion](https://motion.dev/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🏗️ High-Level Architecture
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The platform operates on a **feature-first modular design** utilizing a **Pattern Engine**.
+
+```text
+App
+ ├── Router
+ ├── Layout System
+ ├── Pattern Engine
+ │    ├── Pattern Registry
+ │    ├── Visualization Renderer
+ │    ├── Animation Orchestrator
+ │    └── State Simulation Engine
+ ├── Global State (Zustand)
+ └── Gamification / Progress System
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Each pattern is strictly sandboxed. It maintains its own decoupled simulation logic (acting as an individual mini-runtime) ensuring the visualization and the internal state representation are kept securely separated.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd design-patterns
 ```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the development server
+```bash
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the platform locally.
+
+### 4. Build for production
+```bash
+npm run build
+npm run preview
+```
+
+## 🧩 Adding a New Pattern
+
+To add a new pattern to the platform, you don't need to touch the core engine. Simply:
+
+1. Create a new folder under `src/patterns/`.
+2. Implement the core interface (e.g. `DesignPatternModule`).
+3. Define its `PatternSimulation` containing its local state transitions.
+4. Export and register it in the `PatternRegistry`.
+
+## 🛣️ Roadmap
+
+- **Phase 1**: Core platform + Singleton & Observer patterns.
+- **Phase 2**: Strategy, Factory, and Decorator.
+- **Phase 3**: State, Command, and Mediator.
+- **Phase 4**: Architectural patterns, Microservices visualizations, Event Sourcing.
+
+## 📄 License
+
+This project is internal/private.
